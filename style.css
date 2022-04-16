@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+  --poppins: 'Poppins';
+  --roboto: 'Roboto';
+  --gray: #F4F7FE;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: var(--roboto), sans-serif;
+  box-sizing: border-box;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  transition: 0.5s;
+  z-index: 2;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.navbar.active {
+  background: var(--gray);
+}
+
+.navbar .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.navbar .wrapper .logo-box {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  background: royalblue;
+  border-radius: 50%;
+  margin-right: 10px;
+  overflow: hidden;
+}
+
+.navbar .wrapper .logo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.navbar .wrapper .wrapper-content h2 {
+  font-size: 18px;
+  line-height: 18px;
+}
+
+.navbar .wrapper .wrapper-content span {
+  font-weight: 300;
+}
+
+.navbar .toggle {
+  display: none;
+}
+
+.navbar .navbar-body .list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.navbar .navbar-body .list li {
+  position: relative;
+  padding: 15px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+  margin: 0 5px;
+}
+
+.navbar .navbar-body .list li.active {
+  background: royalblue;
+}
+
+.navbar .navbar-body .list li a {
+  text-decoration: none;
+  color: #000;
+}
+
+.navbar .navbar-body .list li.active a {
+  color: #fff;
+}
+
+.container {
+  position: relative;
+  margin: 100px 40px;
+  overflow: hidden;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-family: var(--poppins);
+  margin-bottom: 30px;
+}
+
+.header .wrapper-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .wrapper-container .wrapper {
+  width: 48%;
+  overflow: hidden;
+}
+
+.header .wrapper-container .wrapper img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.header .wrapper-container .wrapper h2 {
+  font-size: 38px;
+  line-height: 38px;
+  margin: 8px 0;
+}
+
+.header .wrapper-container .wrapper p {
+  line-height: 23px;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.content .wrapper {
+  width: 30%;
+  overflow: hidden;
+}
+
+.content .wrapper .box {
+  position: relative;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.content .wrapper .box .box-header {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.content .wrapper .box .box-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.content .wrapper .box .box-body h3 {
+  font-size: 22px;
+  margin: 8px 0;
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  
+  .navbar {
+    justify-content: space-between;
+  }
+  
+  .navbar .toggle {
+    position: relative;
+    width: 30px;
+    height: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .navbar .toggle span {
+    width: 100%;
+    height: 4px;
+    background: black;
+    border-radius: 20px;
+  }
+  
+  .navbar .navbar-body {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100vh;
+    background: var(--gray);
+    transition: 0.5s;
+  }
+  
+  .navbar .navbar-body.active {
+    left: 0;
+  }
+  
+  .navbar .navbar-body .list {
+    flex-direction: column;
+    align-items: stretch;
+    margin: 100px 0;
+  }
+  
+  .navbar .navbar-body .list li {
+    margin: 10px 0;
+    border-radius: 0;
+    padding: 20px 30px;
+  }
+  
+  .container {
+    margin: 100px 30px;
+  }
+  
+  .header .wrapper-container,
+  .content {
+    flex-direction: column;
+  }
+  
+  .header .wrapper-container .wrapper,
+  .content .wrapper {
+    width: 100%;
+  }
+  
+  .header .wrapper-container .wrapper img {
+    margin-bottom: 10px;
+  }
+  
+  .header .wrapper-container .wrapper h2 {
+    font-size: 26px;
+  }
+  
+}
